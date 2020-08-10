@@ -22,6 +22,7 @@ BARCODE_VALUES = (
     BarcodeValue('STOP', 0, '1100011101011'),
 
     # Special Characters
+    BarcodeValue(' ', 1, '11011001100'),
     BarcodeValue('!', 1, '11001101100'),
     BarcodeValue('"', 2, '11001100110'),
     BarcodeValue('#', 3, '10010011000'),

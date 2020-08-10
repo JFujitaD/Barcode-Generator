@@ -2,8 +2,8 @@ import barcode_values as barval
 from tkinter import *
 
 # Pixel size of each bar
-BAR_SIZE = 3
-QUIET_SIZE = 20
+BAR_SIZE = 5
+QUIET_SIZE = 30
 
 class Barcode:
 
@@ -46,10 +46,11 @@ class Barcode:
 
         # GUI Setup
         root = Tk()
+        root.title('Barcode Generator')
         width = (len(pattern) * BAR_SIZE) + (QUIET_SIZE * 2)
         height = width / 3
 
-        label = Label(root, text=self.text)
+        label = Label(root, text=self.text, font=("Courier", 16))
         label.pack()
 
         # Draw on Canvas
