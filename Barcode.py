@@ -20,8 +20,17 @@ class Barcode:
         self.barcodeValues.append(barval.findUsingSymbol('STOP'))
 
     # Calculate the check digit for the barcode
+    # Step 1: Use value of start Code B = 104
+    # Step 2: Multiply character values by their position (Starting at 1)
+    # Step 3: Add them all together
+    # Step 4: total % 103
     def calculateCheckDigit(self):
-        return  barval.BARCODE_VALUES[0]
+        total = 104
+        i = 0
+        for b in self.barcodeValues:
+            total += b.value * i
+            i += 1 
+        return barval.findUsingValue(total % 103)
 
     # Print barcode pattern in console
     def generateBarcode(self):

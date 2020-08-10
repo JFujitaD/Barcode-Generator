@@ -3,17 +3,23 @@ from BarcodeValue import BarcodeValue
 
 # Functions
 def findUsingSymbol(symbol):
+    for s in BARCODE_VALUES:
+        if s.symbol == symbol:
+            return s 
+    return 0
+
+def findUsingValue(value):
     for v in BARCODE_VALUES:
-        if v.symbol == symbol:
-            return v 
+        if v.value == value:
+            return v
     return 0
         
 
 # Array of barcode values
 BARCODE_VALUES = (
     # Functional Characters
-    BarcodeValue('START', 103, '11010010000'),
-    BarcodeValue('STOP', 106, '1100011101011'),
+    BarcodeValue('START', 104, '11010010000'),
+    BarcodeValue('STOP', 0, '1100011101011'),
 
     # Special Characters
     BarcodeValue('!', 1, '11001101100'),

@@ -1,8 +1,6 @@
 from Barcode import Barcode
 
-barcode = Barcode('a')
+barcode = Barcode('Hey')
+
 print(barcode.toString())
-
 barcode.generateBarcode()
-
-barcode.calculateCheckDigit()
