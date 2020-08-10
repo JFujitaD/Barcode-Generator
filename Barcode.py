@@ -3,7 +3,7 @@ from tkinter import *
 
 # Pixel size of each bar
 BAR_SIZE = 3
-QUIET_SIZE = 10
+QUIET_SIZE = 20
 
 class Barcode:
 
