@@ -1,6 +1,6 @@
 from Barcode import Barcode
 
-barcode = Barcode('Aafes2020')
+barcode = Barcode('Cock')
 
 print(barcode.toString())
 barcode.generateBarcode()

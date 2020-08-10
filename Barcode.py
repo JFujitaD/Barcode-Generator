@@ -2,7 +2,8 @@ import barcode_values as barval
 from tkinter import *
 
 # Pixel size of each bar
-BAR_SIZE = 5
+BAR_SIZE = 3
+QUIET_SIZE = 10
 
 class Barcode:
 
@@ -45,14 +46,22 @@ class Barcode:
 
         # GUI Setup
         root = Tk()
-        width = len(pattern) * BAR_SIZE
+        width = (len(pattern) * BAR_SIZE) + (QUIET_SIZE * 2)
+        height = width / 3
 
         label = Label(root, text=self.text)
         label.pack()
 
-        canvas = Canvas(root, width=width, height=width/3)
         # Draw on Canvas
-        canvas.create_polygon(0, 0, 25, 0, 25, 25)
+        canvas = Canvas(root, width=width, height=height)
+        patternArray = (ch for ch in pattern)
+        x = QUIET_SIZE
+        y = QUIET_SIZE / 2
+
+        for b in patternArray:
+            if(b == '1'):
+                canvas.create_rectangle(x, y, x + BAR_SIZE, height - y, fill='#000000')
+            x += BAR_SIZE
         canvas.pack()
 
         root.mainloop()
