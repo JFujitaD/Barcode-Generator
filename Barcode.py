@@ -1,4 +1,8 @@
 import barcode_values as barval
+from tkinter import *
+
+# Pixel size of each bar
+BAR_SIZE = 5
 
 class Barcode:
 
@@ -32,10 +36,27 @@ class Barcode:
             i += 1 
         return barval.findUsingValue(total % 103)
 
-    # Print barcode pattern in console
+    # Generate visual pattern from collected data using Tkinter
     def generateBarcode(self):
+        pattern = ''
         for b in self.barcodeValues:
-            print(b.pattern, end='')
+            pattern += b.pattern
+        print(pattern)
+
+        # GUI Setup
+        root = Tk()
+        width = len(pattern) * BAR_SIZE
+
+        label = Label(root, text=self.text)
+        label.pack()
+
+        canvas = Canvas(root, width=width, height=width/3)
+        # Draw on Canvas
+        canvas.create_polygon(0, 0, 25, 0, 25, 25)
+        canvas.pack()
+
+        root.mainloop()
+
 
     # Print the barcode value
     def toString(self):
