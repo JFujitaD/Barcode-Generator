@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 
 
-def buttonPressed(text):
+def button_pressed(text):
     try:
         if len(text) == 0:
             raise Exception()
@@ -19,7 +19,7 @@ label = Label(root, text="Enter your barcode value", font=("Courier", 16))
 label.pack()
 entry = Entry(root, font=("Courier", 16))
 entry.pack()
-button = Button(root, text="Generate Barcode", command= lambda: buttonPressed(entry.get()), font=("Courier", 16))
+button = Button(root, text="Generate Barcode", command= lambda: button_pressed(entry.get()), font=("Courier", 16))
 button.pack()
 
 root.mainloop()
