@@ -18,13 +18,13 @@ class Barcode:
         self.text_array = (ch for ch in text)
         
         # For every character in text_array, find the correct barcode value
-        self.barcode_values.append(barval.findUsingSymbol('START'))
+        self.barcode_values.append(barval.find_using_symbol('START'))
 
         for c in self.text_array:
-            self.barcode_values.append(barval.findUsingSymbol(c))
+            self.barcode_values.append(barval.find_using_symbol(c))
 
         self.barcode_values.append(self.calculateCheckDigit())    
-        self.barcode_values.append(barval.findUsingSymbol('STOP'))
+        self.barcode_values.append(barval.find_using_symbol('STOP'))
 
     # Calculate the check digit for the barcode
     # Step 1: Use value of start Code B = 104
@@ -42,7 +42,7 @@ class Barcode:
         for b in self.barcode_values:
             total += b.value * i
             i += 1 
-        return barval.findUsingValue(total % 103)
+        return barval.find_using_value(total % 103)
 
     def generateBarcode(self):
         """Generate visual pattern from collected data"""

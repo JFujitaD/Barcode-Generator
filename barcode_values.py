@@ -2,7 +2,7 @@
 from barcode_value import BarcodeValue
 
 # Functions
-def findUsingSymbol(symbol) -> BarcodeValue:
+def find_using_symbol(symbol) -> BarcodeValue:
     """Finds the barcode value using a symbol
     
         Args:
@@ -15,7 +15,7 @@ def findUsingSymbol(symbol) -> BarcodeValue:
             return s 
     return 0
 
-def findUsingValue(value) -> BarcodeValue:
+def find_using_value(value) -> BarcodeValue:
     """Finds the barcode value using a value
     
         Args:
