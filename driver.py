@@ -1,6 +1,7 @@
-from Barcode import Barcode
+from barcode import Barcode
 from tkinter import *
 from tkinter import messagebox
+
 
 def buttonPressed(text):
     try:

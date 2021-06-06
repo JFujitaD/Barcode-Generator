@@ -1,5 +1,5 @@
 # Code-128 Values
-from BarcodeValue import BarcodeValue
+from barcode_value import BarcodeValue
 
 # Functions
 def findUsingSymbol(symbol):
