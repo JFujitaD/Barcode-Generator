@@ -1,12 +1,13 @@
 import barcode_values as barval
 from tkinter import *
 
+
 # Pixel size of each bar
 BAR_SIZE = 5
 QUIET_SIZE = 30
 
+"""A model representation of a barcode, including various functions."""
 class Barcode:
-
     def __init__(self, text):
         self.text = text
         self.textArray = ()
