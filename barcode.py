@@ -1,3 +1,4 @@
+from barcode_value import BarcodeValue
 import barcode_values as barval
 from tkinter import *
 
@@ -30,7 +31,12 @@ class Barcode:
     # Step 2: Multiply character values by their position (Starting at 1)
     # Step 3: Add them all together
     # Step 4: total % 103
-    def calculateCheckDigit(self):
+    def calculateCheckDigit(self) -> BarcodeValue:
+        """Calculates the check digit for the barcode
+        
+            Returns:
+                BarcodeValue: Barcode value information
+        """
         total = 104
         i = 0
         for b in self.barcodeValues:
@@ -38,8 +44,8 @@ class Barcode:
             i += 1 
         return barval.findUsingValue(total % 103)
 
-    # Generate visual pattern from collected data using Tkinter
     def generateBarcode(self):
+        """Generate visual pattern from collected data"""
         pattern = ''
         for b in self.barcodeValues:
             pattern += b.pattern

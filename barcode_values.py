@@ -15,7 +15,14 @@ def findUsingSymbol(symbol) -> BarcodeValue:
             return s 
     return 0
 
-def findUsingValue(value):
+def findUsingValue(value) -> BarcodeValue:
+    """Finds the barcode value using a value
+    
+        Args:
+            value: The decimal value.
+        Returns:
+            BarcodeValue: The barcode value information
+    """
     for v in BARCODE_VALUES:
         if v.value == value:
             return v
