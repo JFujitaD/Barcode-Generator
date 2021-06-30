@@ -3,8 +3,8 @@
 Generates Code-128 barcodes.
 
 ## Screenshots
-![Input](Images/bg-input.png?raw=true)
-![Output](Images/bg-output.png?raw=true)
+![Input](Images/bg-input.PNG?raw=true)
+![Output](Images/bg-output.PNG?raw=true)
 
 ## Usage
 ```python
