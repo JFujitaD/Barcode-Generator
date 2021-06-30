@@ -2,6 +2,10 @@
 
 Generates Code-128 barcodes.
 
+## Screenshots
+![Input](Images/bg-input.png?raw=true)
+![Output](Images/bg-output.png?raw=true)
+
 ## Usage
 ```python
 py driver.py
